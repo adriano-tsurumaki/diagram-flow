@@ -10,18 +10,6 @@ export default function DiagramControls() {
           icon={<BsTable color="#0d1be4" />}
           tooltip={"Criar uma tabela"}
         />
-        <ButtonMenu
-          icon={<BsTable color="#0d1be4" />}
-          tooltip={"Criar uma tabela"}
-        />
-        <ButtonMenu
-          icon={<BsTable color="#0d1be4" />}
-          tooltip={"Criar uma tabela"}
-        />
-        <ButtonMenu
-          icon={<BsTable color="#0d1be4" />}
-          tooltip={"Criar uma tabela"}
-        />
       </div>
     </Panel>
   );
