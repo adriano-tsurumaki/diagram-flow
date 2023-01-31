@@ -1,6 +1,8 @@
+import { Panel, useReactFlow } from "reactflow";
+
 import { BsTable } from "react-icons/bs";
-import { Panel } from "reactflow";
 import { ReactNode } from "react";
+import table from "@/components/mock/table1";
 
 export default function DiagramControls() {
   return (
@@ -22,8 +24,23 @@ function ButtonMenu({
   icon: ReactNode;
   tooltip: ReactNode;
 }) {
+  const { addNodes } = useReactFlow();
+
   return (
-    <div className="flex bg-white items-center rounded-full p-2 group relative cursor-pointer">
+    <div
+      className="flex bg-white items-center rounded-full p-2 group relative cursor-pointer"
+      onClick={(e) =>
+        addNodes({
+          id: "1000",
+          type: "custom",
+          data: table,
+          position: {
+            x: 0,
+            y: 0,
+          },
+        })
+      }
+    >
       {icon}
       <Tooltip>{tooltip}</Tooltip>
     </div>
