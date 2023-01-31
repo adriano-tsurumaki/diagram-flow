@@ -3,6 +3,7 @@ import "reactflow/dist/style.css";
 import ReactFlow, {
   Background,
   Controls,
+  MiniMap,
   Node,
   NodeChange,
   applyNodeChanges,
@@ -11,6 +12,7 @@ import { useCallback, useState } from "react";
 
 import CustomNode from "./custom-node";
 import DiagramControls from "./diagram-controls";
+import table from "@/components/mock/table1";
 
 const nodeTypes = {
   custom: CustomNode,
@@ -20,13 +22,8 @@ export default function Flow() {
   const [nodes, setNodes] = useState<Node[]>([
     {
       id: "1",
-      data: { Label: "a" },
-      position: { x: 100, y: 100 },
-    },
-    {
-      id: "2",
       type: "custom",
-      data: null,
+      data: table,
       position: { x: 200, y: 200 },
     },
   ]);
@@ -50,7 +47,7 @@ export default function Flow() {
         size={1}
         color="#DEE4E7"
       />
-      <Controls />
+      <MiniMap />
     </ReactFlow>
   );
 }
